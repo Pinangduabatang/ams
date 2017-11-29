@@ -78,7 +78,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       
      </div></div>
     <div class="w3-dropdown-hover w3-hide-small"> 
-        <left><a href="index.html" class="w3-button w3-padding-large">Lecturer</a></left>
+        <right><a href="index.html" class="w3-button w3-padding-large">Log Out</a></right>
      
       
      </div></div>
