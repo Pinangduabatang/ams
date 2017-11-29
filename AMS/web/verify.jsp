@@ -29,6 +29,11 @@
                      session.setAttribute( "email", email );
                      response.sendRedirect("lecturer/home.jsp");
                 }
+                
+                else if((rs.getInt("permission"))==3){
+                     session.setAttribute( "email", email );
+                     response.sendRedirect("Student/Sprofile.jsp");
+                }
             }
             else{
                 out.println("<script type=\'text/javascript\'>");
