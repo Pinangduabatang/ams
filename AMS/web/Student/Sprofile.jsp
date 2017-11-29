@@ -74,7 +74,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </table>
         <br><br><br><br>
         </div>
-        
+        <a href="editInfo.jsp"><input type="button" value="Edit" ></a>
       </div>
     
     </body>
