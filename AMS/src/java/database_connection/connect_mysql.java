@@ -33,7 +33,7 @@ public class connect_mysql extends HttpServlet {
         String hostName = "localhost";
         String database = "utmacademicmanagement";
         String userName = "root";
-        String password = "";
+        String password = "1234";
  
         return getSQLServerConnection(hostName, database, userName, password);
 
