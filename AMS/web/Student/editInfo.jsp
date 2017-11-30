@@ -102,7 +102,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                     <tr><td>IC Number</td><td>:</td><td><input type="text" value="<%= ic %>" name="ic"></td></tr>
                                     <input type="hidden" name="name1" value="<%= name1 %>">
                                     <input type="hidden" name="email1" value="<%= email1 %>">
-                                    <tr><td colspan="3" align="center" ><input type="submit" value="Update" class="btn btn-primary" >&nbsp;&nbsp;<input type="submit" value="Delete" name="Delete"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete the user?')" ></td></tr>
+                                    <tr><td colspan="3" align="center" >
+                                            <a href="Sprofile.jsp"><input type="submit" value="Update" class="btn btn-primary" >
+                                            <input type="submit" value="Delete" name="Delete"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete the user?')" ></td></tr>
                     </table></td></tr>
                                          
                                    
