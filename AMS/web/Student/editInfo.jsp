@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
@@ -42,8 +40,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     
     %>
     
-        <!--    header -->
-     <div class="w3-top">
+        <div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+   <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
     <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
@@ -55,10 +56,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     </div></div>
    
     </div></div><br><br><br>
-<!--  close header-->
-  <%}%>
+    
+   <%}%>
      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <h4 align="center">Edit User</h4>
+        <h4 align="center">Edit My Profile</h4>
         <hr class="w3-clear">
         <form  name="myform" id="myform" method='post' action="../EditUser">
         <table align="center" border="1" width="400" >
@@ -130,36 +131,4 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      frmvalidator.addValidation("ic","numeric","IC Number : Number only");
      frmvalidator.addValidation("ic","maxlen=12","IC Number : IC only have 12 number");
      frmvalidator.addValidation("ic","minlen=12","IC Number : IC only have 12 number");
-     
-  
-   
-  
- 
- 
-//]]></script>
-                        
-                        
-                       
-                        
-                        
-                     
-                      
-                </td>
-            </tr>
-          
-               </table>
-                </td></tr>
-        </table><br><br>
-        <center>
-           
-            
-            
-        </center>
-        </form>
-        </div>
-        
-        
-      </div>
-    
-    </body>
-</html>
+
