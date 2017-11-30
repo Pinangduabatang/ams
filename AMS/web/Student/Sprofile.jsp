@@ -70,21 +70,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <tr><td>Staff ID</td><td>:</td><td><%= userid %></td></tr>
             <tr><td>IC Number</td><td>:</td><td><%= ic %></td></tr>
             
+            <tr><td><a href=<%= "\"edituser.jsp?email=" + useremail+ "\"" %>><input type="button" value="Edit" ></a>
+                </td></tr>
          <%}%>   
         </table>
         <br><br><br><br>
-        </div>
         
-        <% while(rs.next()){
-                             String name=rs.getString("name");
-                             String useremail=rs.getString("email");
-                             String phonenumber=rs.getString("phonenumber");
-                             String userid=rs.getString("userid");
-                             String faculty=rs.getString("faculty");
-                             String picture=rs.getString("picture");
-                             String ic=rs.getString("ic"); %>
-                             
-  <a href=<%= "\"edituser.jsp?email=" + useremail+ "\"" %>><input type="button" value="Edit" ></a>
- 
+        </div>
     </body>
 </html>
