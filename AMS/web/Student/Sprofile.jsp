@@ -74,7 +74,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </table>
         <br><br><br><br>
         </div>
-        <a href="editInfo.jsp"><input type="button" value="Edit" ></a>
+        <% while(rs.next()){
+                             String name=rs.getString("name");
+                             String useremail=rs.getString("email");
+                             String phonenumber=rs.getString("phonenumber");
+                             String userid=rs.getString("userid");
+                             String faculty=rs.getString("faculty");
+                             String picture=rs.getString("picture");
+                             String ic=rs.getString("ic"); %>
+                             <tr><td><%= name %></td><td><%= useremail %></td><td><%= phonenumber %></td><td><%= faculty %></td><td><%= userid %></td><td><%= ic %></td><td><a href=<%= "\"edituser.jsp?email=" + useremail+ "\"" %>><input type="button" value="Edit" ></a></td></tr>
+                        <%}%>
       </div>
     
     </body>
