@@ -84,7 +84,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                              String picture=rs.getString("picture");
                              String ic=rs.getString("ic"); %>
                              
-  <td><a href=<%= "\"edituser.jsp?email=" + useremail+ "\"" %>><input type="button" value="Edit" ></a></td></tr>  
+  <a href=<%= "\"edituser.jsp?email=" + useremail+ "\"" %>><input type="button" value="Edit" ></a>
  
     </body>
 </html>
