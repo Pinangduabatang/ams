@@ -32,7 +32,7 @@
                 
                 else if((rs.getInt("permission"))==3){
                      session.setAttribute( "email", email );
-                     response.sendRedirect("student/Sprofile.jsp");
+                     response.sendRedirect("student/home.jsp");
                 }
             }
             else{
