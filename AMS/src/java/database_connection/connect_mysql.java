@@ -31,7 +31,7 @@ public class connect_mysql extends HttpServlet {
  
         // Note: Change the connection parameters accordingly.
         String hostName = "localhost";
-        String database = "utmacademicmanagement";
+        String database = "ams";
         String userName = "root";
         String password = "1234";
  
