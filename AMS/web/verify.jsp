@@ -18,7 +18,7 @@
         try{
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select * from user where email='"+email+"'and password='"+password+"'");
+            ResultSet rs= st.executeQuery("select * from detail where email='"+email+"'and password='"+password+"'");
             if(rs.next()){
                 if((rs.getInt("permission"))==1){
                     session.setAttribute( "email", email );
