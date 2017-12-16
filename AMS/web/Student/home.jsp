@@ -50,8 +50,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-dropdown-hover w3-hide-small"> 
     <button class="w3-button w3-padding-large" >Course</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="registerCourse.jsp" class="w3-bar-item w3-button">Register course</a>
-      <a href="viewCourse.jsp" class="w3-bar-item w3-button">View Course</a>
+      <a href="registercourse.jsp" class="w3-bar-item w3-button">Register course</a>
+      <a href="viewcourse.jsp" class="w3-bar-item w3-button">View Course</a>
     </div></div>
    
      <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
