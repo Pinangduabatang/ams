@@ -76,12 +76,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      <a href="assignstudent.jsp" class="w3-bar-item w3-button">Student</a>
      
       
+ 
      </div></div>
-    <div class="w3-dropdown-hover w3-hide-small"> 
-        <right><a href="index.html" class="w3-button w3-padding-large">Log Out</a></right>
-     
-      
-     </div></div>
+            <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    
     </div></div><br><br><br>
     
    
