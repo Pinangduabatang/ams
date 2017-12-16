@@ -40,41 +40,45 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     %>
     
         <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-  <div class="w3-dropdown-hover w3-hide-small"> 
-  <button class="w3-button w3-padding-large" >USER</button>
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+    
+    <div class="w3-dropdown-hover w3-hide-small"> 
+    <button class="w3-button w3-padding-large" >User</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="registeruser.jsp" class="w3-bar-item w3-button">Register user</a>
       <a href="viewuser.jsp" class="w3-bar-item w3-button">View user</a>
     </div></div>
+    
     <div class="w3-dropdown-hover w3-hide-small"> 
-  <button class="w3-button w3-padding-large" >Faculty</button>
+    <button class="w3-button w3-padding-large" >Faculty</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="registerfaculty.jsp" class="w3-bar-item w3-button">Add faculty</a>
-      <a href="editfaculty.jsp" class="w3-bar-item w3-button">Edit faculty</a>
+      <a href="viewfaculty.jsp" class="w3-bar-item w3-button">Edit faculty</a>
       
     </div></div>
-    
-    
-     <div class="w3-dropdown-hover w3-hide-small"> 
+       <div class="w3-dropdown-hover w3-hide-small"> 
      <button class="w3-button w3-padding-large" >Subject</button>
      <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-     <a href="registersubject.jsp" class="w3-bar-item w3-button">Add Subject</a>
+       <a href="registersubject.jsp" class="w3-bar-item w3-button">Add Subject</a>
      <a href="viewsubject.jsp" class="w3-bar-item w3-button">Edit Subject</a>
      
-      </div></div>
-  
-         <div class="w3-dropdown-hover w3-hide-small"> 
+      
+    </div></div>
+          <div class="w3-dropdown-hover w3-hide-small"> 
      <button class="w3-button w3-padding-large" >Assign</button>
      <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
      <a href="assignlecturer.jsp" class="w3-bar-item w3-button">Lecturer</a>
      <a href="assignstudent.jsp" class="w3-bar-item w3-button">Student</a>
      
       
-    </div></div>
+ 
+     </div></div>
+            <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    
     </div></div><br><br><br>
+    
   <%}%>
      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <h4 align="center">Search User</h4><br>
