@@ -1,7 +1,7 @@
 <%-- 
-    Document   : editInfo
+    Document   : stuedit
     Created on : Nov 30, 2017, 2:51:43 AM
-    Author     : User
+    Author     : nadia
 --%>
 
 <%@page import="java.sql.*"%>
@@ -21,91 +21,88 @@
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
 <body class="w3-theme-l5">
+    
 <!--   //connect to database-->
              <% 
-            
-            
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
             ResultSet rs= st.executeQuery("select * from detail where email='"+session.getAttribute("email")+"'");
-                        
-            %>
+             %>
     
-      <% 
+     <% 
             if(rs.next()){ 
-            
             String picture=rs.getString("picture");
-            
-            
-    
     %>
     
         <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-   <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-    <div class="w3-dropdown-hover w3-hide-small"> 
-    <button class="w3-button w3-padding-large" >Course</button>
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="registerCourse.jsp" class="w3-bar-item w3-button">Register course</a>
-      <a href="viewCourse.jsp" class="w3-bar-item w3-button">View Course</a>
-    </div></div>
-   
-    </div></div><br><br><br>
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="stuProfile.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+            <div class="w3-dropdown-hover w3-hide-small"> 
+            <button class="w3-button w3-padding-large" >Course</button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="registercourse.jsp" class="w3-bar-item w3-button">Register course</a>
+                <a href="viewCourse.jsp" class="w3-bar-item w3-button">View Course</a>
+                </div>
+            </div>
+        <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    
+        </div>
+    </div>
+    <br><br><br>
     
    <%}%>
      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <h4 align="center">Edit My Profile</h4>
         <hr class="w3-clear">
-        <form  name="myform" id="myform" method='post' action="../EditUser">
+        <form  name="myform" id="myform" method='post' action="../EditStu">
         <table align="center" border="1" width="400" >
             <tr><td>
-        <table align="center"  >
-                  
-            <tr>
-                <td colspan="3" align="center">
-                                       <%
-                    
-                             String email=request.getParameter("email");
-                             rs= st.executeQuery("select * from detail where email='"+email+"'");
-                             if(rs.next()){
-                             String name=rs.getString("name");
-                             String name1 = name;
-                             String useremail=rs.getString("email");
-                             String email1=useremail;
-                             String phonenumber=rs.getString("phonenumber");
-                             String userid=rs.getString("userid");
-                             String faculty=rs.getString("faculty");
-                             String picture=rs.getString("picture");
-                             String ic=rs.getString("ic");
-                             ResultSet rr= st.executeQuery("select * from user where email='"+email+"'"); //diffrent database
-                                     %> 
+        <table align="center">
+            <tr><td colspan="3" align="center">
+                <%
+                    String email=request.getParameter("email");
+                    rs= st.executeQuery("select * from detail where email='"+email+"'");
+                    if(rs.next()){
+                    String name=rs.getString("name");
+                    String name1 = name;
+                    String useremail=rs.getString("email");
+                    String email1=useremail;
+                    String phonenumber=rs.getString("phonenumber");
+                    String userid=rs.getString("userid");
+                    String faculty=rs.getString("faculty");
+                    //String picture=rs.getString("picture");
+                    String ic=rs.getString("ic");
+                    ResultSet rr= st.executeQuery("select * from detail where email='"+email+"'"); //diffrent database
+                %> 
+        
                                      
-                                     <table align="center">
-                                    <tr><th colspan="3">Results</th></tr>
-                                    <tr><td>Name</td><td>:</td><td><input type="text" value="<%= name %>" name="name"></td></tr>
-                                    <tr><td>Email</td><td>:</td><td><input type="text" value="<%= useremail %>" name="email"></td></tr>
-                                    <%if(rr.next()){
-                                                String password=rr.getString("password");   
-                                                String permission=rr.getString("permission"); 
-                                                                                     %>                                                     
-                                    <tr><td>Password</td><td>:</td><td><input type="text" value="<%= password %>" name="password"></td></tr>
-                                    <tr><td>Permission(01:Admin|02:Staff|03:Student)</td><td>:</td><td><input type="text" value="<%= permission %>" name="permission"></td></tr>
-                                            <%}%>
-                                    <tr><td>Phone Number</td><td>:</td><td><input type="text" value="<%= phonenumber %>" name="phonenumber"></td></tr>
-                                    <tr><td>Faculty</td><td>:</td><td><input type="text" value="<%= faculty %>" name="faculty"></td></tr>
-                                    <tr><td>Staff ID</td><td>:</td><td><input type="text" value="<%= userid %>" name="userid"</td></tr>
-                                    <tr><td>IC Number</td><td>:</td><td><input type="text" value="<%= ic %>" name="ic"></td></tr>
-                                    <input type="hidden" name="name1" value="<%= name1 %>">
-                                    <input type="hidden" name="email1" value="<%= email1 %>">
-                                    <tr><td colspan="3" align="center" >
-                                            <a href="Sprofile.jsp"><input type="submit" value="Update" class="btn btn-primary" >
-                                            <input type="submit" value="Delete" name="Delete"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete the user?')" ></td></tr>
-                    </table></td></tr>
+            <table align="center">
+                <br>
+                <tr><td>Name</td><td>:</td>
+                    <td><input type="text" value="<%= name %>" name="name"></td></tr>
+                <tr><td>Email</td><td>:</td>
+                    <td><input type="text" value="<%= useremail %>" name="email"></td></tr>
+                    
+                    <%
+                        if(rr.next()){
+                        String password=rr.getString("password");   
+                        String permission=rr.getString("permission");
+                    %>                                                     
+                    <tr><td>Password</td><td>:</td><td><input type="text" value="<%= password %>" name="password"></td></tr>
+                    <%}%>
+                    <tr>
+                        <td> Student ID</td><td>:</td><td><input type="text" value="<%= userid %>" name="userid"></td>
+                    </tr>
+                        <tr><td>Phone Number</td><td>:</td><td><input type="text" value="<%= phonenumber %>" name="phonenumber"></td></tr>
+                        <tr><td>Faculty</td><td>:</td><td><input type="text" value="<%= faculty %>" name="faculty"></td></tr>
+                        <tr><td>IC Number</td><td>:</td><td><input type="text" value="<%= ic %>" name="ic"></td></tr>
+                        
+                        
+                        <tr><td colspan="3" align="center" ><input type="submit" value="Update" name="Update" class="btn btn-primary" >
+                        </td></tr>
+            </table>
+            </td></tr>
                                          
                                    
                           
@@ -126,9 +123,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      frmvalidator.addValidation("name","alpha","Name : Alphabic character only");
      frmvalidator.addValidation("phonenumber","numeric","Phone Number : Number only");
      frmvalidator.addValidation("phonenumber","req");
-     frmvalidator.addValidation("permission","req");
      frmvalidator.addValidation("faculty","req");
-     frmvalidator.addValidation("userid","req");
      frmvalidator.addValidation("ic","req");
      frmvalidator.addValidation("ic","numeric","IC Number : Number only");
      frmvalidator.addValidation("ic","maxlen=12","IC Number : IC only have 12 number");
