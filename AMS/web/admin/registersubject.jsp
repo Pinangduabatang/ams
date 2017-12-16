@@ -74,7 +74,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      
       
     </div></div>
-   
+   <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    
  </div>
         </div><br><br><br>
 <!--  close header-->
