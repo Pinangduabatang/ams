@@ -94,7 +94,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <h4 align="center">Register Course</h4><br>
         <hr class="w3-clear">
-        <form  name="myform" method="POST" action="../RegisterCourse" >
+        <form  name="myform" method="POST" action="../registercourse" >
         <table align="center" border="1" width="600" >
             <tr><td>
             <INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
