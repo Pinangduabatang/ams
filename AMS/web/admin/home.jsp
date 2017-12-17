@@ -25,7 +25,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select * from admin where email='"+session.getAttribute("email")+"'");
+            ResultSet rs= st.executeQuery("select * from detail where email='"+session.getAttribute("email")+"'");
                         
             %>
     
@@ -34,8 +34,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             String name=rs.getString("name");
             String useremail=rs.getString("email");
             String phonenumber=rs.getString("phonenumber");
-            String adminid=rs.getString("adminid");
-            String department=rs.getString("department");
+            String userid=rs.getString("userid");
+            String faculty=rs.getString("faculty");
             String picture=rs.getString("picture");
             String ic=rs.getString("ic");
             
@@ -46,14 +46,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
     <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-    
     <div class="w3-dropdown-hover w3-hide-small"> 
     <button class="w3-button w3-padding-large" >User</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="registeruser.jsp" class="w3-bar-item w3-button">Register user</a>
       <a href="viewuser.jsp" class="w3-bar-item w3-button">View user</a>
     </div></div>
-    
     <div class="w3-dropdown-hover w3-hide-small"> 
     <button class="w3-button w3-padding-large" >Faculty</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
@@ -76,27 +74,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      <a href="assignstudent.jsp" class="w3-bar-item w3-button">Student</a>
      
       
- 
-     </div></div>
-            <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    </div>
+	
+    </div>
     
+   <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    </div>
+        
+
     </div></div><br><br><br>
     
    
   
     <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <img src="../image/<%= picture %>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:300px">
+        <!--<img src="../image/<%= picture %>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:300px">
+        -->
         <span class="w3-right w3-opacity">Admin</span>
         <h4><%=name %></h4><br>
         <hr class="w3-clear">
         <table cellspacing="10">
             <tr><td>Email</td><td>:</td><td><%= useremail %></td></tr>
             <tr><td>Phone Number</td><td>:</td><td><%= phonenumber %></td></tr>
-            <tr><td>Department</td><td>:</td><td><%= department %></td></tr>
-            <tr><td>Staff ID</td><td>:</td><td><%= adminid %></td></tr>
+            <tr><td>Faculty</td><td>:</td><td><%= faculty %></td></tr>
+            <tr><td>Staff ID</td><td>:</td><td><%= userid %></td></tr>
             <tr><td>IC Number</td><td>:</td><td><%= ic %></td></tr>
-            
-            <tr><td><a href=<%= "\"editAdmin.jsp?email=" + useremail+ "\"" %>>
+            <tr><td><a href=<%= "\"adminedit.jsp?email=" + useremail+ "\"" %>>
                     <input type="button" value="Edit" ></a>
             </td></tr>
          <%}%>   
