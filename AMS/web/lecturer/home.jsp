@@ -25,7 +25,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select * from detail where email='"+session.getAttribute("email")+"'");
+            ResultSet rs= st.executeQuery("select * from lecturer where email='"+session.getAttribute("email")+"'");
                         
             %>
     
@@ -34,7 +34,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             String name=rs.getString("name");
             String useremail=rs.getString("email");
             String phonenumber=rs.getString("phonenumber");
-            String userid=rs.getString("userid");
+            String lecturerid=rs.getString("lecturerid");
             String faculty=rs.getString("faculty");
             String picture=rs.getString("picture");
             String ic=rs.getString("ic");
@@ -52,44 +52,39 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <a href="teachingcourse.jsp" class="w3-bar-item w3-button">Teaching course</a>
     </div></div>
     <div class="w3-dropdown-hover w3-hide-small"> 
-    <button class="w3-button w3-padding-large" >Faculty</button>
+    <button class="w3-button w3-padding-large" >Grade</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="registerfaculty.jsp" class="w3-bar-item w3-button">Add faculty</a>
-      <a href="viewfaculty.jsp" class="w3-bar-item w3-button">Edit faculty</a>
+      <a href="graderesult.jsp" class="w3-bar-item w3-button">Grade Subject</a>
+      <a href="viewgradecourse.jsp" class="w3-bar-item w3-button">Edit Grade</a>
       
     </div></div>
-       <div class="w3-dropdown-hover w3-hide-small"> 
-     <button class="w3-button w3-padding-large" >Subject</button>
-     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-       <a href="registersubject.jsp" class="w3-bar-item w3-button">Add Subject</a>
-     <a href="viewsubject.jsp" class="w3-bar-item w3-button">Edit Subject</a>
+ 
      
-      
-    </div></div>
-          <div class="w3-dropdown-hover w3-hide-small"> 
-     <button class="w3-button w3-padding-large" >Assign</button>
-     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-     <a href="assignlecturer.jsp" class="w3-bar-item w3-button">Lecturer</a>
-     <a href="assignstudent.jsp" class="w3-bar-item w3-button">Student</a>
+     <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    </div>
      
-      
-    </div></div
     </div></div><br><br><br>
+<!--    //close header-->
     
    
   
     <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <form action="FileUpload" method="post" enctype="multipart/form-data">
+        <input type = "file" name = "file" size = "50" />
+        </form>
         <img src="../image/<%= picture %>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:300px">
-        <span class="w3-right w3-opacity">Admin</span>
+        <span class="w3-right w3-opacity">Lecturer</span>
         <h4><%=name %></h4><br>
         <hr class="w3-clear">
         <table cellspacing="10">
             <tr><td>Email</td><td>:</td><td><%= useremail %></td></tr>
             <tr><td>Phone Number</td><td>:</td><td><%= phonenumber %></td></tr>
             <tr><td>Faculty</td><td>:</td><td><%= faculty %></td></tr>
-            <tr><td>Staff ID</td><td>:</td><td><%= userid %></td></tr>
+            <tr><td>Staff ID</td><td>:</td><td><%= lecturerid %></td></tr>
             <tr><td>IC Number</td><td>:</td><td><%= ic %></td></tr>
-            
+            <tr><td><a href=<%= "\"lectedit.jsp?email=" + useremail+ "\"" %>>
+                    <input type="button" value="Edit" ></a>
+            </td></tr>
          <%}%>   
         </table>
         <br><br><br><br>
