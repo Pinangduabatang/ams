@@ -8,7 +8,6 @@ import javax.servlet.http.*;
 import java.util.*;
 import javax.servlet.annotation.WebServlet;
 import database_connection.connect_mysql;
-import static java.lang.System.out;
 
 @WebServlet(name="EditAdmin",urlPatterns=("/EditAdmin"))
 
@@ -55,12 +54,17 @@ public class EditAdmin extends HttpServlet {
     String email = request.getParameter("email");
     String phonenumber = request.getParameter("phonenumber");
     String department = request.getParameter("department");
+    String picture = request.getParameter("picture");
+    String adminid = request.getParameter("adminid");
+    String ic = request.getParameter("ic");
+    String permission = request.getParameter("permission");
     
-   
        
       try{
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
+            
+            
             
             
             //update table detail
