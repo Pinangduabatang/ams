@@ -96,6 +96,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <tr><td>Staff ID</td><td>:</td><td><%= adminid %></td></tr>
             <tr><td>IC Number</td><td>:</td><td><%= ic %></td></tr>
             
+            <tr><td><a href=<%= "\"editAdmin.jsp?email=" + useremail+ "\"" %>>
+                    <input type="button" value="Edit" ></a>
+            </td></tr>
          <%}%>   
         </table>
         <br><br><br><br>
