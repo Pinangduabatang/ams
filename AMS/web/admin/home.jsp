@@ -25,7 +25,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select * from detail where email='"+session.getAttribute("email")+"'");
+            ResultSet rs= st.executeQuery("select * from admin where email='"+session.getAttribute("email")+"'");
                         
             %>
     
@@ -34,8 +34,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             String name=rs.getString("name");
             String useremail=rs.getString("email");
             String phonenumber=rs.getString("phonenumber");
-            String userid=rs.getString("userid");
-            String faculty=rs.getString("faculty");
+            String adminid=rs.getString("adminid");
+            String department=rs.getString("department");
             String picture=rs.getString("picture");
             String ic=rs.getString("ic");
             
@@ -92,8 +92,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <table cellspacing="10">
             <tr><td>Email</td><td>:</td><td><%= useremail %></td></tr>
             <tr><td>Phone Number</td><td>:</td><td><%= phonenumber %></td></tr>
-            <tr><td>Faculty</td><td>:</td><td><%= faculty %></td></tr>
-            <tr><td>Staff ID</td><td>:</td><td><%= userid %></td></tr>
+            <tr><td>Department</td><td>:</td><td><%= department %></td></tr>
+            <tr><td>Staff ID</td><td>:</td><td><%= adminid %></td></tr>
             <tr><td>IC Number</td><td>:</td><td><%= ic %></td></tr>
             
          <%}%>   
