@@ -96,14 +96,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 <br>
                 <tr><td>Name</td><td>:</td>
                     <td><input type="text" value="<%= name %>" name="name"></td></tr>
-                <tr><td>Email</td><td>:</td>
-                    <td><input type="text" value="<%= useremail %>" name="email"></td></tr>
-                    
-                 
-                        <tr><td>Phone Number</td><td>:</td><td><input type="text" value="<%= phonenumber %>" name="phonenumber"></td></tr>
-                        <tr><td>Department</td><td>:</td><td><input type="text" value="<%= department %>" name="department"></td></tr>
-                        <tr><td>IC Number</td><td>:</td><td><input type="text" value="<%= ic %>" name="ic"></td></tr>
-                        
+              
+                <tr><td>Phone Number</td><td>:</td><td><input type="text" value="<%= phonenumber %>" name="phonenumber"></td></tr>
+                <tr><td>Department</td><td>:</td><td><input type="text" value="<%= department %>" name="department"></td></tr>
                         
                         <tr><td colspan="3" align="center" ><input type="submit" value="Update" name="Update" class="btn btn-primary" >
                         </td></tr>
