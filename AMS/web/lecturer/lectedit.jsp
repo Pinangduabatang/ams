@@ -71,7 +71,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <h4 align="center">Edit My Profile</h4>
         <hr class="w3-clear">
-        <form  name="myform" id="myform" method='post' action="../LectEdit">
+        <form  name="myform" id="myform" method='post' action="../EditLect">
         <table align="center" border="1" width="400" >
             <tr><td>
         <table align="center">
