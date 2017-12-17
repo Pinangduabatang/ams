@@ -54,7 +54,7 @@ public class EditAdmin extends HttpServlet {
     String name = request.getParameter("name");
     String email = request.getParameter("email");
     String phonenumber = request.getParameter("phonenumber");
-    String department = request.getParameter("faculty");
+    String department = request.getParameter("department");
     
    
        
