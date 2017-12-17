@@ -26,98 +26,73 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             
             Connection con = connect_mysql.getSQLServerConnection();
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select * from detail where email='"+session.getAttribute("email")+"'");
+            ResultSet rs= st.executeQuery("select * from lecturer where email='"+session.getAttribute("email")+"'");
+            if(rs.next()){
+             String lecturerid=rs.getString("lecturerid");   
+            
                         
             %>
-    
-      <% 
-            if(rs.next()){ 
-            
-            String picture=rs.getString("picture");
-            
-            
-    
-    %>
+
 <!--    header-->
+         
         <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-  <div class="w3-dropdown-hover w3-hide-small"> 
-  <button class="w3-button w3-padding-large" >Course</button>
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="home.jsp" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+    <div class="w3-dropdown-hover w3-hide-small"> 
+    <button class="w3-button w3-padding-large" >Courses</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="teachingcourse.jsp" class="w3-bar-item w3-button">Teaching courses</a>
+      <a href="teachingcourse.jsp" class="w3-bar-item w3-button">Teaching course</a>
     </div></div>
     <div class="w3-dropdown-hover w3-hide-small"> 
-  <button class="w3-button w3-padding-large" >Faculty</button>
+    <button class="w3-button w3-padding-large" >Grade</button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="registerfaculty.jsp" class="w3-bar-item w3-button">Add faculty</a>
-      <a href="viewfaculty.jsp" class="w3-bar-item w3-button">Edit faculty</a>
+      <a href="graderesult.jsp" class="w3-bar-item w3-button">Grade Subject</a>
+      <a href="viewgradecourse.jsp" class="w3-bar-item w3-button">Edit Grade</a>
       
     </div></div>
-    
-         <div class="w3-dropdown-hover w3-hide-small"> 
-     <button class="w3-button w3-padding-large" >Subject</button>
-     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-     <a href="registersubject.jsp" class="w3-bar-item w3-button">Add Subject</a>
-     <a href="viewsubject.jsp" class="w3-bar-item w3-button">Edit Subject</a>
+ 
      
-      </div></div>
-  
-         <div class="w3-dropdown-hover w3-hide-small"> 
-     <button class="w3-button w3-padding-large" >Assign</button>
-     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-     <a href="assignlecturer.jsp" class="w3-bar-item w3-button">Lecturer</a>
-     <a href="assignstudent.jsp" class="w3-bar-item w3-button">Student</a>
+     <div class="w3-right-align w3-hide-small"> <a href="../logout.jsp"><button class="w3-button w3-black w3-padding-large" >Logout</button></a></div>
+    </div>
      
-      
-    </div></div>
-    </div></div>
- <%}%>
-<!-- close header-->
-        <br><br><br>
-  
+    </div></div><br><br><br>
+<!--    //close header-->
+          <form  name="myform" id="myform" method='post' action="">
+
      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <h4 align="center">Search Subject</h4><br>
+        <h4 align="center">Teaching Subject</h4><br>
         <hr class="w3-clear">
-        <form  name="myform" id="myform" method='post' action="">
         <table align="center" border="1" width="600" >
             <tr><td><br>
                     <table align="center"  ><tr><td><br>
-            <table align="center">
-            <tr>
-                <td>Code </td><td>:</td>
-                <td><input type="text" name="code"></td>
-            </tr>
-            <tr><td colspan="3" align="right"> <INPUT TYPE="SUBMIT" NAME="submit" Value="Search">&nbsp;</td></tr></table><br>
+
             <tr>
                 <td colspan="3" align="center">
                     <br>
-                    <%
-                     ResultSet rr = st.executeQuery("select * from detail email='"+session.getAttribute("email")+"'");
-                     {
-                     String id=rr.getString("userid");
-                     rs= st.executeQuery("select * from subject where staffid='"+id+"' ");%>
+                    <%                 
+                        
+                     ResultSet rr= st.executeQuery("select * from teaching where lecturerid='"+lecturerid+"'");%>
                    
                                      <table align="center" border="1"  class="table table-hover table-condensed ">
-                                         <tr><th colspan="5" align="center">List of Teaching course</th></tr>
-                                         <tr><th>Subject Name</th><th>Subject Code</th><th>Subject Faculty</th><th>Subject Type</th><th>Edit</th></tr>
+                                         <tr><th colspan="4" align="center"><center>List of Teaching Subject</center></th></tr>
+                                         <tr><th>Subject Code</th><th>Section</th><th>Details</th></tr>
                      
-                             <%  while(rs.next()){
-                             String name=rs.getString("name");
-                             String code=rs.getString("code");
-                             String faculty = rs.getString("faculty");
-                             String type = rs.getString("type");
+                             <%  while(rr.next()){
+                             String subject=rr.getString("subject");
+                             int section = rr.getInt("section");
+                             
+                     
                        
                        
                                      %> 
                                      <br>
                                                                                                        
-                                    <tr><td><%= name %></td><td><%= code %></td><td><%= faculty %></td><td><%= type %></td><td><a href=<%= "\"editsubject.jsp?name=" + name + "\"" %>><input type="button" value="Edit" ></a></td></tr>
+                                    <tr><td><%= subject %></td><td><%= section %></td><td colspan="3"><center><a href=<%= "\"viewcourse.jsp?subject=" + subject + "&section="+section+"\"" %>><input type="button" value="View" ></a></center></td></tr>
                                                                               
                                      
                           
-                         <%}}%>
+                         <%}%>
                   
                                      </table><br><br><br>
                         
@@ -135,10 +110,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 </td></tr>
         </table><br><br>
         <center>
-           
+        </form>  
             
         </center>
-        </form>
         </div>
         
         
